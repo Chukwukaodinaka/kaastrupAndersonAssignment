@@ -6,7 +6,7 @@ namespace KaastrupSalaryTest
 {
     public class FacadeTests
     {
-       private IFacade facade = new Facade();
+       private IFacade facade = new Facade(new StateHandler());
 
 
         [Test]
@@ -29,7 +29,7 @@ namespace KaastrupSalaryTest
         [Test]
         public void Validate_Message_FirstTimeOfDay()
         {
-            DateTime dateTime = new DateTime(2022,03,30);
+            DateTime dateTime = DateTime.Today;
             String message =facade.GenerateSalaryMessage(dateTime);
             Assert.AreNotEqual(message,"none for you");
         }

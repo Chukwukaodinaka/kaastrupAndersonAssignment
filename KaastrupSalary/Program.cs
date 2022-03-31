@@ -1,13 +1,11 @@
-﻿using System;
-using System.Runtime.CompilerServices;
-
-namespace SalaryHours
+﻿namespace SalaryHours
 {
     class Program 
     {
         static void Main(string[] args)
         {
-            IFacade facade = new Facade() ;
+            IStateHandler stateHandler = new StateHandler();
+            IFacade facade = new Facade(stateHandler) ;
             Reader reader = new Reader();
 
             while (true)

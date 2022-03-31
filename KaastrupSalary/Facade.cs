@@ -4,10 +4,10 @@ namespace SalaryHours
 {
     public class Facade : IFacade
     {
-        private IStateHandler _handler;
-        public Facade()
+        private readonly IStateHandler _handler;
+        public Facade(IStateHandler handler)
         {
-            _handler = new StateHandler();
+            _handler = handler;
         }
         
         public string GenerateSalaryMessage(DateTime startedWork)
