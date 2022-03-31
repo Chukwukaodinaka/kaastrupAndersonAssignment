@@ -4,7 +4,12 @@ namespace SalaryHours
 {
     public class Facade : IFacade
     {
-        private IStateHandler _handler = new StateHandler();
+        private IStateHandler _handler;
+        public Facade()
+        {
+            _handler = new StateHandler();
+        }
+        
         public string GenerateSalaryMessage(DateTime startedWork)
         {
             if (startedWork.Date == DateTime.Now.Date && startedWork < DateTime.Now)
